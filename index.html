@@ -3,90 +3,58 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Gregg Valentine — Reel, Samples, Contact</title>
-<meta name="description" content="Creative Producer portfolio: reel, selected work samples, and contact." />
-<meta name="theme-color" content="#0c1024" />
-<link rel="preconnect" href="https://player.vimeo.com" />
+<title>Gregg Valentine</title>
+<meta name="description" content="Creative Producer portfolio — reel, samples, contact." />
+<meta name="theme-color" content="#0b1020" />
 <style>
   :root{
-    --bg:#0b1020; --bg2:#0b122b; --panel:#0f1730; --ink:#e7ebff; --muted:#b7bdd1;
-    --line:#253059; --accent:#ffd46b; --link:#9bd0ff; --radius:14px; --max:1100px;
-    --shadow:0 10px 30px rgba(0,0,0,.35);
+    --bg:#0b1020; --ink:#e8ebf7; --muted:#b7bdd1; --accent:#ffd46b; --line:#263055;
+    --max:860px;
   }
   *{box-sizing:border-box}
-  html,body{margin:0;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--ink);
-    font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
-  a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
-  img{max-width:100%;height:auto;display:block}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  html,body{margin:0;background:linear-gradient(180deg,var(--bg),#0b122b);color:var(--ink);
+    font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+  a{color:var(--ink);text-decoration:none}
+  a:hover{color:var(--accent)}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
   /* Header */
-  header{position:sticky;top:0;z-index:10;background:rgba(11,16,32,.6);backdrop-filter:blur(6px) saturate(140%);
+  header{position:sticky;top:0;z-index:10;background:rgba(11,16,32,.7);backdrop-filter:saturate(140%) blur(6px);
     border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-  .brand{display:flex;align-items:center;gap:10px}
-  .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px var(--accent)}
-  .brand span{font-weight:700;letter-spacing:.4px}
-  .menu{display:flex;gap:18px}
-  .menu a{color:var(--ink);opacity:.9;font-weight:600}
-  .menu a.active{opacity:1}
-  /* Hero */
-  .hero{padding:48px 0 28px;border-bottom:1px solid var(--line)}
-  .hero h1{font-size:40px;line-height:1.1;margin:0 0 .3em}
-  .sub{color:var(--muted);font-size:18px;margin:0}
-  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
-  .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;
-    border:1px solid var(--line);background:linear-gradient(180deg,#18224b,#121a39);color:var(--ink);box-shadow:var(--shadow)}
-  .ghost{background:transparent}
+  .brand{font-weight:700;letter-spacing:.4px}
+  .menu{display:flex;gap:22px}
+  .menu a{opacity:.9} .menu a[aria-current="page"]{opacity:1;color:var(--accent)}
   /* Sections */
-  section{padding:48px 0;border-bottom:1px solid var(--line)}
-  h2{font-size:26px;margin:0 0 18px}
-  /* Reel block */
-  .reel{display:grid;grid-template-columns:1.1fr .9fr;gap:28px}
-  @media (max-width:900px){.reel{grid-template-columns:1fr}}
-  .video{background:#0a1128;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
-  .video iframe{width:100%;aspect-ratio:16/9;border:0}
-  .card{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
-  .list{margin:0;padding-left:18px;color:var(--muted)}
-  .list li{margin:.35em 0}
-  .tiny{font-size:.92rem;color:var(--muted)}
-  /* Samples grid */
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  @media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
-  @media (max-width:560px){.grid{grid-template-columns:1fr}}
-  .thumb{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:12px;cursor:pointer;background:#0a1128}
-  .thumb img{width:100%;height:190px;object-fit:cover;opacity:.95;transition:transform .25s ease}
-  .thumb:hover img{transform:scale(1.03)}
-  .thumb .cap{position:absolute;inset:auto 0 0 0;padding:10px 12px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.65));
-    font-size:14px}
-  .filter{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
-  .pill{padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.03);cursor:pointer}
-  .pill.active{background:rgba(255,255,255,.08)}
-  /* Modal */
-  .modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;padding:20px}
-  .modal.show{display:flex}
-  .modal-inner{width:min(100%,1000px);background:#0b122b;border:1px solid var(--line);border-radius:12px;overflow:hidden}
-  .modal-head{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-bottom:1px solid var(--line)}
-  .modal-head strong{font-size:15px}
-  .modal-body{padding:0}
-  .modal-body iframe{width:100%;aspect-ratio:16/9;border:0}
+  main>section{padding:40px 0;border-bottom:1px solid var(--line)}
+  h1,h2{margin:.1em 0 .6em} h1{font-size:28px} h2{font-size:20px;color:var(--muted)}
+  /* Reel */
+  .player{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#0a1128}
+  .player iframe{width:100%;aspect-ratio:16/9;border:0;display:block}
+  .breakdown{margin:18px 0 0 0;padding-left:18px;color:var(--muted)}
+  .breakdown li{margin:.34em 0}
+  /* Samples (list style, like the live site) */
+  .samples-list{list-style:none;padding:0;margin:0}
+  .samples-list li{border-top:1px solid var(--line)}
+  .samples-list li a{display:block;padding:10px 4px}
+  .samples-list li a span{color:var(--muted)}
   /* Contact */
-  .contact{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-  @media (max-width:800px){.contact{grid-template-columns:1fr}}
-  .field{display:flex;flex-direction:column;gap:6px}
-  input, textarea{background:#0d1533;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:10px 12px}
+  form{display:grid;gap:10px;max-width:520px}
+  label{display:flex;flex-direction:column;gap:6px}
+  input,textarea{background:#0d1533;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:10px 12px}
   textarea{min-height:120px;resize:vertical}
-  .social{display:flex;gap:14px;flex-wrap:wrap}
-  .foot{padding:18px 0;color:var(--muted);font-size:.95rem}
-  .backtop{display:inline-block;margin-top:12px;font-size:.95rem}
+  button{justify-self:start;background:transparent;border:1px solid var(--line);color:var(--ink);padding:10px 14px;border-radius:8px;cursor:pointer}
+  button:hover{border-color:var(--accent);color:var(--accent)}
+  .success{color:var(--muted);margin-top:6px}
+  /* Footer */
+  footer{padding:18px 0;color:var(--muted);font-size:.95rem}
 </style>
 </head>
 <body>
-
 <header>
   <div class="wrap nav">
-    <div class="brand"><span class="dot"></span><span>Gregg Valentine</span></div>
+    <div class="brand">Gregg Valentine</div>
     <nav class="menu" aria-label="Primary">
-      <a href="#reel" class="active">Reel</a>
+      <a href="#reel">Reel</a>
       <a href="#samples">Samples</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -94,183 +62,98 @@
 </header>
 
 <main>
-  <!-- HERO -->
-  <section class="hero">
+  <!-- Reel -->
+  <section id="reel" aria-labelledby="reel-h">
     <div class="wrap">
-      <h1>Director • Producer • Animator</h1>
-      <p class="sub">Stop-motion, mixed media, motion graphics, and live-action production.</p>
-      <div class="cta">
-        <a class="btn" href="#reel">Watch Reel</a>
-        <a class="btn ghost" href="#samples">View Samples</a>
+      <h1 id="reel-h">Reel</h1>
+      <div class="player" role="region" aria-label="Reel video">
+        <!-- TODO: swap to your reel embed (Vimeo/YouTube) -->
+        <iframe src="https://player.vimeo.com/video/76979871?h=4f3ef2f0c3&title=0&byline=0&portrait=0"
+                allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
       </div>
+
+      <h2>Reel Breakdown</h2>
+      <!-- Keep the long, timestamped list (like the live site) -->
+      <ol class="breakdown">
+        <!-- EXAMPLES — replace with your items -->
+        <li><time>00:03</time> Dancing Penguin Birthday — Producer/Cinematographer/Editor/Compositor</li>
+        <li><time>00:12</time> Message in a Bottle — Director/Producer/Cinematographer/Motion Graphics/Editor</li>
+        <li><time>00:31</time> Margarita Day — Director/Cinematographer/Producer/Editor/Compositor</li>
+        <li><time>00:33</time> Rockin’ Around the Christmas Tree — Director/Producer/Cinematographer/Compositor/Production</li>
+        <!-- …continue your full list -->
+      </ol>
+      <!-- The real site presents this breakdown beneath the reel. :contentReference[oaicite:1]{index=1} -->
     </div>
   </section>
 
-  <!-- REEL -->
-  <section id="reel">
+  <!-- Samples (text links, no thumbnails) -->
+  <section id="samples" aria-labelledby="samples-h">
     <div class="wrap">
-      <h2>Reel</h2>
-      <div class="reel">
-        <div class="video" role="region" aria-label="Reel video">
-          <!-- TODO: replace src with your reel (Vimeo/YouTube embed) -->
-          <iframe
-            src="https://player.vimeo.com/video/76979871?h=4f3ef2f0c3&title=0&byline=0&portrait=0"
-            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <aside class="card" aria-label="Reel Breakdown">
-          <strong>Reel Breakdown</strong>
-          <ol class="list tiny" id="reelBreakdown">
-            <!-- Mirror the live site’s timestamped list format with your own items. :contentReference[oaicite:1]{index=1} -->
-            <li><time>00:03</time> <a href="#" target="_blank" rel="noopener">Sample Project A</a> — Director/Producer</li>
-            <li><time>00:12</time> <a href="#" target="_blank" rel="noopener">Sample Project B</a> — Producer/Editor</li>
-            <li><time>00:22</time> <a href="#" target="_blank" rel="noopener">Sample Project C</a> — Director/Compositor</li>
-            <li><time>00:33</time> <a href="#" target="_blank" rel="noopener">Sample Project D</a> — Director/DP</li>
-            <li><time>00:45</time> <a href="#" target="_blank" rel="noopener">Sample Project E</a> — Producer/Mograph</li>
-          </ol>
-          <p class="tiny">Format: <code>timestamp · linked title — roles</code></p>
-        </aside>
+      <h1 id="samples-h">Samples</h1>
+      <ul class="samples-list">
+        <!-- Mirror the minimalist link list on the live homepage. :contentReference[oaicite:2]{index=2} -->
+        <li><a href="#proj-rockin">Rockin’ Around the Christmas Tree <span>→ watch</span></a></li>
+        <li><a href="#proj-ladies">Ladies Night <span>→ watch</span></a></li>
+        <li><a href="#proj-dad">Dad to the Bone <span>→ watch</span></a></li>
+        <li><a href="#proj-mouse">Mouse <span>→ watch</span></a></li>
+        <li><a href="#proj-brunch">Thanks a Brunch! <span>→ watch</span></a></li>
+        <li><a href="#proj-wine">Classic Wine Pairings <span>→ watch</span></a></li>
+        <li><a href="#proj-margarita">Margarita Your Way! <span>→ watch</span></a></li>
+        <!-- …add the rest of your titles -->
+      </ul>
+
+      <!-- Inline “detail” anchors so links work in a single file -->
+      <div id="proj-rockin" style="margin-top:30px">
+        <h2>Rockin’ Around the Christmas Tree</h2>
+        <div class="player"><iframe src="https://player.vimeo.com/video/76979871?h=4f3ef2f0c3" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
       </div>
-      <a class="backtop" href="#top">↑ Back to Top</a>
+      <div id="proj-ladies" style="margin-top:30px">
+        <h2>Ladies Night</h2>
+        <div class="player"><iframe src="https://player.vimeo.com/video/76979871?h=4f3ef2f0c3" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+      </div>
+      <div id="proj-dad" style="margin-top:30px">
+        <h2>Dad to the Bone</h2>
+        <div class="player"><iframe src="https://player.vimeo.com/video/76979871?h=4f3ef2f0c3" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+      </div>
+      <div id="proj-mouse" style="margin-top:30px">
+        <h2>Mouse</h2>
+        <div class="player"><iframe src="https://player.vimeo.com/video/76979871?h=4f3ef2f0c3" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+        <!-- The live “Mouse” page mentions the GIPHY stat near the top. :contentReference[oaicite:3]{index=3} -->
+      </div>
+      <!-- Add more sections for additional projects as needed -->
     </div>
   </section>
 
-  <!-- SAMPLES -->
-  <section id="samples">
+  <!-- Contact -->
+  <section id="contact" aria-labelledby="contact-h">
     <div class="wrap">
-      <h2>Samples</h2>
-      <nav class="filter" id="filters" aria-label="Sample filters">
-        <button class="pill active" data-tag="all" aria-pressed="true">All</button>
-        <button class="pill" data-tag="stopmotion">Stop-Motion</button>
-        <button class="pill" data-tag="mograph">Motion Graphics</button>
-        <button class="pill" data-tag="liveaction">Live-Action</button>
-        <button class="pill" data-tag="holiday">Holiday</button>
-      </nav>
-
-      <div class="grid" id="grid">
-        <!-- The live site contains projects like Rockin’ Around the Christmas Tree, Ladies Night, Dad to the Bone, Mouse, etc. This grid mirrors that layout. :contentReference[oaicite:2]{index=2} -->
-
-        <!-- SAMPLE CARD (duplicate and replace data attrs / image src) -->
-        <figure class="thumb" data-tags="stopmotion holiday"
-                data-title="Rockin’ Around the Christmas Tree"
-                data-video="https://player.vimeo.com/video/76979871?h=4f3ef2f0c3">
-          <img src="https://picsum.photos/640/360?random=101" alt="Thumbnail for Rockin’ Around the Christmas Tree">
-          <figcaption class="cap">Rockin’ Around the Christmas Tree</figcaption>
-        </figure>
-
-        <figure class="thumb" data-tags="liveaction" data-title="Ladies Night"
-                data-video="https://player.vimeo.com/video/76979871?h=4f3ef2f0c3">
-          <img src="https://picsum.photos/640/360?random=102" alt="Thumbnail for Ladies Night">
-          <figcaption class="cap">Ladies Night</figcaption>
-        </figure>
-
-        <figure class="thumb" data-tags="stopmotion" data-title="Dad to the Bone"
-                data-video="https://player.vimeo.com/video/76979871?h=4f3ef2f0c3">
-          <img src="https://picsum.photos/640/360?random=103" alt="Thumbnail for Dad to the Bone">
-          <figcaption class="cap">Dad to the Bone</figcaption>
-        </figure>
-
-        <figure class="thumb" data-tags="stopmotion" data-title="Mouse"
-                data-video="https://player.vimeo.com/video/76979871?h=4f3ef2f0c3">
-          <img src="https://picsum.photos/640/360?random=104" alt="Thumbnail for Mouse">
-          <figcaption class="cap">Mouse</figcaption>
-        </figure>
-
-        <!-- Add more figures to match your catalog -->
-      </div>
-      <a class="backtop" href="#top">↑ Back to Top</a>
+      <h1 id="contact-h">Contact</h1>
+      <form onsubmit="sendMail(event)">
+        <label> Name *
+          <input id="name" name="name" required />
+        </label>
+        <label> Email Address *
+          <input id="email" name="email" type="email" required />
+        </label>
+        <label> Message *
+          <textarea id="msg" name="message" required></textarea>
+        </label>
+        <button type="submit">Submit</button>
+        <div id="ok" class="success" hidden>Thank you! Your message is on its way. I’ll get back to you soon!</div>
+      </form>
     </div>
   </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="wrap">
-      <h2>Contact</h2>
-      <div class="contact">
-        <!-- The live site has a simple Name/Email/Message form with a success line. :contentReference[oaicite:3]{index=3} -->
-        <form class="card" name="contact" onsubmit="sendMail(event)">
-          <div class="field">
-            <label for="name">Name</label>
-            <input id="name" name="name" placeholder="Your name" required>
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="you@example.com" required>
-          </div>
-          <div class="field">
-            <label for="msg">Message</label>
-            <textarea id="msg" name="message" placeholder="Project details, timeline, etc." required></textarea>
-          </div>
-          <button class="btn" type="submit">Submit</button>
-          <p class="tiny" id="sent" hidden>Thank you! Your message is on its way. I’ll get back to you soon!</p>
-        </form>
-
-        <div class="card">
-          <strong>Find me online</strong>
-          <div class="social" style="margin-top:10px">
-            <!-- Swap in your real profiles -->
-            <a class="btn ghost" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="btn ghost" href="https://vimeo.com/" target="_blank" rel="noopener">Vimeo</a>
-            <a class="btn ghost" href="https://www.imdb.com/" target="_blank" rel="noopener">IMDb</a>
-            <a class="btn ghost" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
-          </div>
-          <p class="tiny" style="margin-top:10px">Prefer direct email? <a href="mailto:hello@example.com">hello@example.com</a></p>
-        </div>
-      </div>
-      <a class="backtop" href="#top">↑ Back to Top</a>
-    </div>
-  </section>
-
-  <div class="wrap foot">
-    © <span id="year"></span> Gregg Valentine. All rights reserved.
-  </div>
 </main>
 
-<!-- Modal for video lightbox -->
-<div id="modal" class="modal" role="dialog" aria-modal="true" aria-label="Video dialog">
-  <div class="modal-inner">
-    <div class="modal-head">
-      <strong id="modalTitle">Video</strong>
-      <button class="btn ghost" onclick="closeModal()">Close</button>
-    </div>
-    <div class="modal-body">
-      <iframe id="modalFrame" src="" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-    </div>
-  </div>
-</div>
+<footer>
+  <div class="wrap">© <span id="y"></span> Gregg Valentine</div>
+</footer>
 
 <script>
-  // Year
-  document.getElementById('year').textContent = new Date().getFullYear();
+  // year
+  document.getElementById('y').textContent = new Date().getFullYear();
 
-  // Filter chips
-  const pills = Array.from(document.querySelectorAll('.pill'));
-  const cards = Array.from(document.querySelectorAll('.thumb'));
-  pills.forEach(p=>p.addEventListener('click', ()=>{
-    pills.forEach(x=>x.classList.remove('active')); p.classList.add('active');
-    const tag = p.dataset.tag;
-    cards.forEach(c=>{
-      const tags = (c.dataset.tags||'').split(' ');
-      c.style.display = (tag==='all' || tags.includes(tag)) ? '' : 'none';
-    });
-    pills.forEach(x=>x.setAttribute('aria-pressed', x===p ? 'true' : 'false'));
-  }));
-
-  // Modal
-  const modal = document.getElementById('modal');
-  const frame = document.getElementById('modalFrame');
-  const title = document.getElementById('modalTitle');
-  cards.forEach(c=>{
-    c.addEventListener('click', ()=>{
-      title.textContent = c.dataset.title || 'Video';
-      frame.src = c.dataset.video || '';
-      modal.classList.add('show');
-    });
-  });
-  function closeModal(){ modal.classList.remove('show'); frame.src=''; }
-  window.closeModal = closeModal;
-  modal.addEventListener('click', (e)=>{ if(e.target===modal) closeModal(); });
-
-  // Contact mailto shim (no backend)
+  // simple mailto (no backend)
   function sendMail(e){
     e.preventDefault();
     const name = encodeURIComponent(document.getElementById('name').value.trim());
@@ -280,8 +163,21 @@
     const subject = `Portfolio inquiry from ${decodeURIComponent(name)}`;
     const body = `Name: ${decodeURIComponent(name)}%0AEmail: ${decodeURIComponent(email)}%0A%0A${msg}`;
     window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${body}`;
-    document.getElementById('sent').hidden = false;
+    document.getElementById('ok').hidden = false;
   }
+
+  // mark current nav item on scroll
+  const sections=[...document.querySelectorAll('main>section')];
+  const navLinks=[...document.querySelectorAll('.menu a')];
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){
+        const id='#'+en.target.id;
+        navLinks.forEach(a=>a.setAttribute('aria-current', a.getAttribute('href')===id?'page':null));
+      }
+    });
+  },{rootMargin:'-50% 0px -45% 0px',threshold:0});
+  sections.forEach(s=>io.observe(s));
 </script>
 </body>
 </html>
